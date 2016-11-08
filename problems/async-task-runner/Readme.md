@@ -43,14 +43,14 @@ If the number of tasks exceeds concurrency limit (which is passed to the TaskRun
 Here's an example:
 
 ```js
-var r = new TaskRunner(3);
+var runner = new TaskRunner(3);
 // use the exampleSimpleTask from above;
 
-r.push(exampleSimpleTask); // executes immediately
-r.push(exampleSimpleTask); // executes immediately
-r.push(exampleSimpleTask); // executes immediately
+runner.push(exampleSimpleTask); // executes immediately
+runner.push(exampleSimpleTask); // executes immediately
+runner.push(exampleSimpleTask); // executes immediately
 
-r.push(exampleSimpleTask); // should wait until one of the running tasks completes
-r.push(exampleSimpleTask); // should wait until one of the running tasks completes
+runner.push(exampleSimpleTask); // should wait until one of the running tasks completes
+runner.push(exampleSimpleTask); // should wait until one of the running tasks completes
 // ...
 ```
